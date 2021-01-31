@@ -6,7 +6,7 @@
 // Метод buy- це метод що приймає аргументом
 // обєкт книги і додає її в бібліотеку якщо її там ще немає.
 // Якщо книга вже є показує повідомлення що книга вже куплена
-// Метод sell- це метод що приймає аргументом
+// Метод sell- це метод що приймає аргументом назву книги і видаляє її з бібліотеки
 // Метод addToFavourite - це метод що приймає
 // аргументом назву книги і додає обєкт книги в список
 // улюблених
@@ -37,3 +37,51 @@
                 
 // Клас Book приймає один аргумент - обєкт з парметрами книги. В
 // середині класу використовувати деструктуризацію обєкта
+
+class Library{
+
+buy(book){
+ 
+}
+sell(){
+
+}
+addToFavourite(bookName){
+
+}
+removeFromFavourite(bookName){
+
+}
+get сountFavouriteBooks(){
+
+}
+get finishedBook (){
+
+}
+totalCost(){
+
+}
+
+}
+
+class Book{
+constructor(author,title,price,totalPages,currentPage){
+     this.author=author;
+     this.title= title;
+     this.price=price;
+     this.totalPages=totalPages;
+     this.currentPage=currentPage;
+}
+read(countPage){
+
+}
+get bookProgres(){
+
+}
+set bookProgres(){
+
+}
+
+}
+ const myBook = new Book();
+ 
