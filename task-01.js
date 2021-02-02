@@ -14,46 +14,39 @@
 //  Написати всі методи і перевірити чи вони працюють
 
 class Calculator{
-    
-getNumber(a,b){
-    this.a=a;
-    this.b=b;
-}
-sum(){
-    return this.a+this.b;
   
-}
-
-minus(){
-  return  this.a-this.b;
-  
-}
-
-multi(){
-  return  this.a*this.b;
+getNumber() {
+    this.a = +prompt('a?', 0);
+    this.b = +prompt('b?', 0);
   }
-
+sum(){
+  return megaCalc.result(this.a+this.b);
+  }
+minus(){
+  return  megaCalc.result(this.a-this.b);
+ }
+multi(){
+  return  megaCalc.result(this.a*this.b);
+  
+  }
 division(){
-  return this.a/this.b;
+  return megaCalc.result(this.a/this.b);
+ }
+
+addMethod (calculate, callback){
  
+      return megaCalc.result(callback(calculate.a,calculate.b));
 }
-
-addMethod (a,b, callback){
-      return callback(a,b);
-}
-
 result(value){
-  this.value=value;
+  
     console.log(`Результат операции =  ${value}`);
 }
 }
-
+let degree = ((a,b)=>a ** b);
 const megaCalc = new Calculator();
-megaCalc.getNumber(2,4);
-
-megaCalc.result(megaCalc.sum());
-megaCalc.result(megaCalc.minus());
-megaCalc.result(megaCalc.multi());
-megaCalc.result(megaCalc.division());
-
-megaCalc.result(megaCalc.addMethod(2,2,(a, b) => a ** b));
+megaCalc.getNumber();
+megaCalc.sum();
+megaCalc.minus();
+megaCalc.multi();
+megaCalc.division();
+megaCalc.addMethod(megaCalc, degree);
