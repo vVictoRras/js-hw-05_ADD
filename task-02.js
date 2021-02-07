@@ -96,12 +96,15 @@ class Library {
 }
 
 class Book {
-  constructor(author, title, price, totalPages, currentPage = 0) {
-    this.author = author;
-    this.title = title;
-    this.price = price;
-    this.totalPages = totalPages;
-    this.currentPage = currentPage;
+
+  constructor({author, title, price, totalPages,currentPage}) {
+
+  this.author = author;
+  this.title = title;
+  this.price = price ;
+  this.totalPages = totalPages;
+  this.currentPage = currentPage;
+
   }
 
   read(readPages) {
@@ -115,11 +118,32 @@ class Book {
   }
 }
 
-const myBook1 = new Book("Turgenev", "Mu-Mu", 100, 350);
-const myBook2 = new Book("Dostoevsky", "Idiot", 200, 420, 420);
-const myBook3 = new Book("Tolstoi", "War and Peace", 600, 555, 155);
+let book1 = {
+  author: "Turgenev",
+  title: "Mu-Mu",
+  price: 100,
+  totalPages: 350,
+  currentPage: 0,
+};
+let book2 = {
+  author: "Dostoevsky",
+  title: "Idiot",
+  price: 200,
+  totalPages: 465,
+  currentPage: 465,
+};
+let book3 = {
+  author: "Tolstoi",
+  title: "War and Peace",
+  price: 600,
+  totalPages: 865,
+  currentPage: 155,
+};
 
-//  console.log(myBook1);
+let myBook1 = new Book(book1);
+let myBook2 = new Book(book2);
+let myBook3 = new Book(book3);
+// console.log(myBook1);
 //  console.log(myBook2);
 //  console.log(myBook3);
 
@@ -142,5 +166,5 @@ console.log(library.сountFavouriteBooks() + " -кол-во избранных �
 console.log(library.finishedBook() + " -количество прочитанных книг");
 console.log(library.totalCost() + " -общая стоимость");
 
-console.log(myBook3.getBookProgres().toFixed(2) + "%");
+console.log(`${myBook3.author}, ${myBook3.title} -->>` + ' прочитан на ' + myBook3.getBookProgres().toFixed(2) +"%");
  
